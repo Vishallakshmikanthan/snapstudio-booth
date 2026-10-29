@@ -60,7 +60,7 @@ export default function EditStep(props: Props) {
   const layout = LAYOUTS.find((l) => l.id === layoutId)!
   const [tab, setTab] = useState<TabId>('stickers')
   const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [activeCat, setActiveCat] = useState(STICKER_CATEGORIES[0].id)
+  const [activeCat, setActiveCat] = useState(STICKER_CATEGORIES[0]!.id)
   const [scale, setScale] = useState(0)
   const [exportBusy, setExportBusy] = useState(false)
   const [exported, setExported] = useState(false)
@@ -181,7 +181,10 @@ export default function EditStep(props: Props) {
       const j = i + dir
       if (i < 0 || j < 0 || j >= prev.length) return prev
       const next = [...prev]
-      ;[next[i], next[j]] = [next[j], next[i]]
+      const current = next[i]!
+      const neighbour = next[j]!
+      next[i] = neighbour
+      next[j] = current
       return next
     })
   }

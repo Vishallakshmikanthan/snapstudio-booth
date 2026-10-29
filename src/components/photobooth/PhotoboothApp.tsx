@@ -42,8 +42,8 @@ export default function PhotoboothApp() {
 
   const layout = LAYOUTS.find((l) => l.id === layoutId)!
   const mode = MODES.find((m) => m.id === modeId)!
-  const frame = FRAMES.find((f) => f.id === frameId) ?? FRAMES[0]
-  const filter = FILTERS.find((f) => f.id === filterId) ?? FILTERS[0]
+  const frame = FRAMES.find((f) => f.id === frameId) ?? FRAMES[0]!
+  const filter = FILTERS.find((f) => f.id === filterId) ?? FILTERS[0]!
 
   const applyMode = (m: Mode) => {
     setModeId(m.id)
