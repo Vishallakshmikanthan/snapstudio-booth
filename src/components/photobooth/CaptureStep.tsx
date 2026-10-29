@@ -137,11 +137,11 @@ export default function CaptureStep({ layout, shots, onShots, onLayout, onContin
       const next = [...prev]
       let ui = 0
       for (let i = 0; i < next.length && ui < urls.length; i++) {
-        if (!next[i]) next[i] = urls[ui++]
+        if (!next[i]) next[i] = urls[ui++]!
       }
       let ri = 0
       while (ui < urls.length && next.length > 0) {
-        next[ri % next.length] = urls[ui++]
+        next[ri % next.length] = urls[ui++]!
         ri++
       }
       return next
