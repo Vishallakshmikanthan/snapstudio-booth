@@ -127,11 +127,11 @@ export default function PhotoboothApp({ routeStep }: PhotoboothAppProps) {
             >
               <img
                 src="/logo-camera-transparent.png"
-                alt="SNAPSTUDIO"
+                alt="SnapStudio"
                 className="h-6 w-auto object-contain sm:h-7"
               />
               <span className="flex items-center">
-                <span>SNAPSTUDIO</span>
+                <span>SnapStudio</span>
                 <span className="ml-0.5 text-[#e5a93c]">✦</span>
               </span>
             </button>
@@ -350,10 +350,10 @@ export default function PhotoboothApp({ routeStep }: PhotoboothAppProps) {
           <div className="flex items-center gap-2">
             <img
               src="/logo-camera-transparent.png"
-              alt="SNAPSTUDIO"
+              alt="SnapStudio"
               className="h-4 w-auto object-contain opacity-85"
             />
-            <span>SNAPSTUDIO — Virtual Photobooth & Creative Studio</span>
+            <span>SnapStudio — Virtual Photobooth & Creative Studio</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
             <button onClick={() => goStep('landing')} className="hover:underline">

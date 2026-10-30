@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SNAPSTUDIO — Virtual Photobooth & Creative Studio" },
+      { title: "SnapStudio — Virtual Photobooth & Creative Studio" },
       {
         name: "description",
         content:
           "A virtual four-cut photobooth for every mood. Capture live shots, choose from 8 art-directed photo modes, customize with frames, filters, and doodles, and download studio-grade PNG strips.",
       },
-      { name: "author", content: "SNAPSTUDIO" },
-      { property: "og:title", content: "SNAPSTUDIO — Virtual Photobooth" },
+      { name: "author", content: "SnapStudio" },
+      { property: "og:title", content: "SnapStudio — Virtual Photobooth" },
       {
         property: "og:description",
         content: "Your Moments, Any Vibe. Capture, customize, and keep your best moments.",
@@ -112,9 +112,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon.ico?v=3", sizes: "any" },
+      { rel: "icon", href: "/favicon.png?v=3", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=3" },
     ],
   }),
   shellComponent: RootShell,

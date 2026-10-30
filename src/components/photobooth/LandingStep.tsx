@@ -155,9 +155,9 @@ export default function LandingStep({
             {/* Left Hero Copy */}
             <div className="anim-fade-up relative z-10 min-w-0 max-w-xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1 pl-1.5 pr-3.5 backdrop-blur-md">
-                <img src="/logo-camera-transparent.png" alt="SNAPSTUDIO" className="h-6 w-auto object-contain" />
-                <span className="text-[11px] font-bold tracking-widest uppercase text-[#faf8f5]">
-                  SNAPSTUDIO<span className="text-[#e5a93c]">✦</span>
+                <img src="/logo-camera-transparent.png" alt="SnapStudio" className="h-6 w-auto object-contain" />
+                <span className="text-[11px] font-bold tracking-widest text-[#faf8f5]">
+                  SnapStudio<span className="text-[#e5a93c]">✦</span>
                 </span>
                 <span className="hidden text-[10px] text-[#9c988f] sm:inline">
                   · Capture · Create · Keep Forever
@@ -242,7 +242,7 @@ export default function LandingStep({
                   >
                     Join thousands creating memories
                     <br />
-                    with SNAPSTUDIO
+                    with SnapStudio
                   </p>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export default function LandingStep({
                   </div>
                   <div className="mt-2 flex items-center justify-between px-0.5 pt-0.5 sm:mt-2.5 sm:pt-1">
                     <span className="font-mono text-[7px] font-bold tracking-widest text-zinc-500 sm:text-[8px]">
-                      SNAPSTUDIO 04
+                      SnapStudio 04
                     </span>
                     <div className="flex h-3 items-center gap-[1px] sm:h-3.5 sm:gap-[1.5px]">
                       {[2, 1, 2, 1, 2, 1, 2, 1, 2].map((w, i) => (
@@ -353,7 +353,7 @@ export default function LandingStep({
                   </div>
                   <div className="mt-2 border-t border-white/10 pt-1.5 text-center sm:mt-2.5 sm:pt-2">
                     <p className="font-mono text-[8px] font-bold tracking-[0.2em] text-[#e5a93c] sm:text-[10px]">
-                      SNAPSTUDIO
+                      SnapStudio
                     </p>
                     <p className="text-[8px] text-white/60 sm:text-[9px]">See Modes 100</p>
                   </div>
@@ -544,7 +544,7 @@ export default function LandingStep({
                       fill="none"
                     />
                     <text fontSize="8.5" fontWeight="600" letterSpacing="2.4" fill="currentColor">
-                      <textPath href="#circlePath">SNAPSTUDIO PHOTOGRAPHY • EST 2026 •</textPath>
+                      <textPath href="#circlePath">SnapStudio PHOTOGRAPHY • EST 2026 •</textPath>
                     </text>
                   </svg>
                   <span className="absolute text-xs text-[#e5a93c]">✦</span>

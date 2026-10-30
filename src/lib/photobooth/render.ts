@@ -363,7 +363,7 @@ function drawDoodleSticker(ctx: CanvasRenderingContext2D, s: Sticker, defaultFg:
 }
 
 function drawTextSticker(ctx: CanvasRenderingContext2D, s: Sticker) {
-  const text = s.emoji || 'SNAPSTUDIO'
+  const text = s.emoji || 'SnapStudio'
   const style = s.textStyle || 'hand'
   ctx.save()
   ctx.textAlign = 'center'
@@ -549,7 +549,7 @@ export async function drawStrip(canvas: HTMLCanvasElement, config: StripConfig, 
       ctx.translate(w - 16, ry + 40)
       ctx.rotate(-Math.PI / 2)
       setTracking(ctx, '1.5px')
-      ctx.fillText(r % 2 === 0 ? 'KEEP YOURSELF ALIVE' : 'SNAPSTUDIO SEOUL', 0, 0)
+      ctx.fillText(r % 2 === 0 ? 'KEEP YOURSELF ALIVE' : 'SnapStudio', 0, 0)
       setTracking(ctx, '0px')
       ctx.restore()
     }
@@ -628,7 +628,7 @@ export async function drawStrip(canvas: HTMLCanvasElement, config: StripConfig, 
     ctx.font = '800 44px "Space Grotesk", sans-serif'
     ctx.fillStyle = fgColor
     setTracking(ctx, '-1.5px')
-    ctx.fillText('SNAPSTUDIO', PAD - 2, headY + 6)
+    ctx.fillText('SnapStudio', PAD - 2, headY + 6)
     setTracking(ctx, '0px')
     ctx.font = '500 12px "JetBrains Mono", monospace'
     ctx.textAlign = 'right'
@@ -638,7 +638,7 @@ export async function drawStrip(canvas: HTMLCanvasElement, config: StripConfig, 
     ctx.globalAlpha = 0.95
     ctx.font = '700 18px "Space Grotesk", sans-serif'
     setTracking(ctx, '3px')
-    ctx.fillText('✦ SNAPSTUDIO', PAD + 4, headY)
+    ctx.fillText('✦ SnapStudio', PAD + 4, headY)
     ctx.font = '500 13px "Space Grotesk", sans-serif'
     ctx.globalAlpha = 0.65
     ctx.textAlign = 'right'
@@ -825,7 +825,7 @@ export async function drawStrip(canvas: HTMLCanvasElement, config: StripConfig, 
       ctx.font = '500 15px "Instrument Serif", Georgia, serif'
       ctx.globalAlpha = 0.85
       ctx.textBaseline = 'middle'
-      ctx.fillText('keep yourself alive at  SNAPSTUDIO', w / 2, yy + 22)
+      ctx.fillText('keep yourself alive at  SnapStudio', w / 2, yy + 22)
       yy += 38
       ctx.globalAlpha = 1
     } else if (frame.style === 'pixel') {

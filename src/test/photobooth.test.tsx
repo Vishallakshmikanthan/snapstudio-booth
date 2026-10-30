@@ -4,7 +4,7 @@ import PhotoboothApp from '@/components/photobooth/PhotoboothApp'
 import { DOODLE_STICKERS, FILTERS, FRAMES, LAYOUTS, MODES, STICKER_CATEGORIES } from '@/lib/photobooth/data'
 import { stripSize } from '@/lib/photobooth/render'
 
-describe('SNAPSTUDIO core data & workflow', () => {
+describe('SnapStudio core data & workflow', () => {
   it('defines all 8 photo modes with valid default frames, filters, and layouts', () => {
     expect(MODES).toHaveLength(8)
     const modeIds = MODES.map((m) => m.id)
