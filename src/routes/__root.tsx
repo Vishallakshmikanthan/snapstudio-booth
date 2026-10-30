@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SNAPSTUDIO — Virtual Korean Photobooth & Creative Studio" },
+      { title: "SNAPSTUDIO — Virtual Photobooth & Creative Studio" },
       {
         name: "description",
         content:
-          "A virtual Korean four-cut photobooth for every mood. Capture live shots, choose from 8 art-directed photo modes, customize with frames, filters, and doodles, and download studio-grade PNG strips.",
+          "A virtual four-cut photobooth for every mood. Capture live shots, choose from 8 art-directed photo modes, customize with frames, filters, and doodles, and download studio-grade PNG strips.",
       },
       { name: "author", content: "SNAPSTUDIO" },
       { property: "og:title", content: "SNAPSTUDIO — Virtual Photobooth" },
