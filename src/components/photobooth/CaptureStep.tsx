@@ -731,7 +731,7 @@ export default function CaptureStep({
                         <div className="relative">
                           <img
                             src={shot}
-                            alt={`Shot ${i + 1}`}
+                            alt={`Captured photobooth frame ${i + 1} of ${layout.slots}`}
                             className={`w-full object-cover ${
                               layout.slots <= 4 ? 'aspect-[16/10]' : 'aspect-[4/3]'
                             }`}

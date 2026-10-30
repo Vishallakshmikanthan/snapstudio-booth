@@ -1,4 +1,5 @@
 // ─── SNAPSTUDIO Landing Page: Cinematic dark hero, 8-mode strip showcase, curated gallery, craft section ───
+import { useState } from 'react'
 import { FILTERS, FRAMES, LAYOUTS, MODES, type Mode, type ModeId } from '@/lib/photobooth/data'
 import type { StepId } from '@/lib/photobooth/context'
 
@@ -109,6 +110,29 @@ const STRIP_SHOWCASE_SHOTS = [
   '/samples/duo-4.jpg',
 ]
 
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: 'How do I take photo strips with SnapStudio?',
+    a: "Click 'Enter Studio' to get started. Choose your preferred strip layout (2-shot, 4-shot, 6-shot, or 2×2 / 2×3 collage), capture live portraits with the automatic countdown timer, or upload pictures from your device. Then pick an aesthetic mode, apply vintage film filters, place stickers, and download your high-resolution strip.",
+  },
+  {
+    q: 'Do I need to grant camera permissions to use the photobooth?',
+    a: 'Camera access is completely optional! If you prefer not to use your webcam, you can upload photos directly from your phone or laptop, or try our curated sample portrait sessions to experiment with modes and frames right away.',
+  },
+  {
+    q: 'How do stickers, doodles, and custom text stamps work?',
+    a: 'In the Customize step, open the stickers drawer to browse 8 sticker categories including hand-drawn doodles, stars, hearts, memes, and badges. You can also generate custom typography text stickers, then drag, rotate, resize, and undo/redo any placement on the live canvas.',
+  },
+  {
+    q: 'How do I download and save my photobooth strips?',
+    a: "Click 'Download Strip' to save a studio-grade PNG directly to your device. You can also export a 300 DPI print-ready strip, copy the image to your clipboard, or share it directly through your phone or computer's native share menu.",
+  },
+  {
+    q: 'Are my photos private and secure?',
+    a: 'Yes, 100%! SnapStudio operates entirely in your web browser. Your camera stream, captured portraits, and finished strips are rendered client-side on your device and are never uploaded, stored, or transmitted to any server.',
+  },
+]
+
 export default function LandingStep({
   sectionView = 'all',
   onStartCapture,
@@ -116,6 +140,7 @@ export default function LandingStep({
   onNavigateSection,
   onTryPreset,
 }: Props) {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
   const showHeroAndModes = sectionView === 'all'
   const showGallery = sectionView === 'all' || sectionView === 'gallery'
   const showAbout = sectionView === 'all' || sectionView === 'about'
@@ -229,7 +254,10 @@ export default function LandingStep({
                     <img
                       key={i}
                       src={src}
-                      alt="Creator portrait"
+                      alt={`SnapStudio community creator portrait ${i + 1}`}
+                      width={44}
+                      height={44}
+                      loading="eager"
                       className="h-10 w-10 rounded-full border-2 border-[#141416] object-cover shadow-md grayscale transition duration-300 hover:grayscale-0 sm:h-11 sm:w-11"
                     />
                   ))}
@@ -284,7 +312,10 @@ export default function LandingStep({
                       <div key={idx} className="overflow-hidden rounded-[2px] bg-zinc-200">
                         <img
                           src={src}
-                          alt={`Classic cut ${idx + 1}`}
+                          alt={`SnapStudio Classic photobooth cut ${idx + 1}`}
+                          width={200}
+                          height={150}
+                          loading="eager"
                           className="aspect-[4/3] w-full object-cover grayscale contrast-125 transition duration-300 group-hover:scale-105"
                         />
                       </div>
@@ -344,7 +375,10 @@ export default function LandingStep({
                       <div key={idx} className="overflow-hidden rounded-[2px] bg-zinc-900">
                         <img
                           src={src}
-                          alt={`Cinema cut ${idx + 1}`}
+                          alt={`SnapStudio Cinema cut ${idx + 1}`}
+                          width={200}
+                          height={150}
+                          loading="eager"
                           className="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105"
                           style={{ filter: 'sepia(0.22) saturate(1.25) contrast(1.12)' }}
                         />
@@ -385,7 +419,10 @@ export default function LandingStep({
                   <div className="relative overflow-hidden rounded-[3px]">
                     <img
                       src="/samples/vintage-2.jpg"
-                      alt="Portrait card"
+                      alt="SnapStudio vintage analog portrait preview"
+                      width={190}
+                      height={250}
+                      loading="eager"
                       className="aspect-[3/4] w-full object-cover transition duration-300 group-hover:scale-105"
                     />
                     <div className="absolute bottom-2 right-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#facc15] bg-black/25 text-lg text-[#facc15] backdrop-blur-[1px]">
@@ -465,7 +502,11 @@ export default function LandingStep({
                   <div className="relative aspect-[9/19] w-full overflow-hidden rounded-xl border border-black/10 bg-[#18181b] p-1.5 shadow-[0_18px_38px_-15px_rgba(0,0,0,0.28)] transition group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.42)]">
                     <img
                       src={m.previewImage}
-                      alt={m.name}
+                      alt={`SnapStudio ${m.name} aesthetic photobooth strip preview`}
+                      width={180}
+                      height={380}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full rounded-lg object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -576,7 +617,11 @@ export default function LandingStep({
                     <div className="relative mt-3 aspect-[4/4.4] w-full overflow-hidden rounded-2xl bg-[#101013]">
                       <img
                         src={item.image}
-                        alt={item.title}
+                        alt={`SnapStudio ${item.title} photo strip showcase — ${item.subtitle}`}
+                        width={400}
+                        height={440}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
@@ -704,6 +749,57 @@ export default function LandingStep({
                     <p className="mt-2 text-xs leading-relaxed text-[#9c988f]">{feat.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* ── FAQ SECTION ── */}
+            <div className="mt-16 sm:mt-24">
+              <div className="text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#e5a93c]">
+                  <span>Questions & Answers</span>
+                  <span className="hidden h-px w-8 bg-[#e5a93c]/50 sm:inline-block" />
+                </div>
+                <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#faf8f5] sm:text-4xl">
+                  Frequently Asked Questions
+                </h2>
+                <p className="mt-2 text-xs text-[#a8a49c] sm:text-sm">
+                  Everything you need to know about taking photo strips, camera permissions, customization, and client-side privacy.
+                </p>
+              </div>
+
+              <div className="mt-8 space-y-3 sm:mt-10">
+                {FAQS.map((faq, idx) => {
+                  const isOpen = openFaq === idx
+                  return (
+                    <div
+                      key={idx}
+                      className="overflow-hidden rounded-2xl border border-white/10 bg-[#16161b] transition hover:border-white/20"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? null : idx)}
+                        aria-expanded={isOpen}
+                        className="flex w-full items-center justify-between gap-4 p-5 text-left transition sm:p-6"
+                      >
+                        <h3 className="text-sm font-bold text-[#faf8f5] sm:text-base">
+                          {faq.q}
+                        </h3>
+                        <span
+                          className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm font-semibold text-[#e5a93c] transition-transform duration-200 ${
+                            isOpen ? 'rotate-45' : ''
+                          }`}
+                        >
+                          +
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="border-t border-white/5 px-5 pb-5 pt-3 text-xs leading-relaxed text-[#a8a49c] sm:px-6 sm:pb-6 sm:text-sm">
+                          <p>{faq.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
 

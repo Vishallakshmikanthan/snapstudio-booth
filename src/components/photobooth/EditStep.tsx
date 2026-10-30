@@ -1134,7 +1134,11 @@ export default function EditStep(props: Props) {
                         <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-black">
                           <img
                             src={samplePreviewShot}
-                            alt={f.name}
+                            alt={`SnapStudio ${f.name} photo filter preset preview`}
+                            width={160}
+                            height={100}
+                            loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                             style={{ filter: f.css || undefined }}
                           />

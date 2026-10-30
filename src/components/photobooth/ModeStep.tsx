@@ -102,7 +102,11 @@ export default function ModeStep({ currentId, shots = [], onPick, onSkip, onBack
 
                   <img
                     src={m.previewImage}
-                    alt={`${m.name} example`}
+                    alt={`SnapStudio ${m.name} aesthetic photobooth strip`}
+                    width={320}
+                    height={220}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
                   />
 
@@ -205,7 +209,11 @@ export default function ModeStep({ currentId, shots = [], onPick, onSkip, onBack
                   <div className="relative aspect-[9/19] w-full overflow-hidden rounded-xl border border-black/10 bg-[#18181b] shadow-md transition duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
                     <img
                       src={m.previewImage}
-                      alt={`${m.name} strip`}
+                      alt={`SnapStudio ${m.name} strip preview`}
+                      width={180}
+                      height={380}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
                   </div>
