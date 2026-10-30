@@ -154,6 +154,16 @@ export default function LandingStep({
           <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1.02fr_1.18fr] lg:gap-10">
             {/* Left Hero Copy */}
             <div className="anim-fade-up relative z-10 min-w-0 max-w-xl">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1 pl-1.5 pr-3.5 backdrop-blur-md">
+                <img src="/logo-camera-transparent.png" alt="SNAPSTUDIO" className="h-6 w-auto object-contain" />
+                <span className="text-[11px] font-bold tracking-widest uppercase text-[#faf8f5]">
+                  SNAPSTUDIO<span className="text-[#e5a93c]">✦</span>
+                </span>
+                <span className="hidden text-[10px] text-[#9c988f] sm:inline">
+                  · Capture · Create · Keep Forever
+                </span>
+              </div>
+
               <div className="inline-flex flex-wrap items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#c7c2b8] sm:gap-3 sm:text-[11px] sm:tracking-[0.26em]">
                 <span>Photography for a brighter tomorrow</span>
                 <span className="hidden h-px w-10 bg-[#c7c2b8]/40 sm:inline-block" />

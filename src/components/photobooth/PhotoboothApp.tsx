@@ -123,10 +123,17 @@ export default function PhotoboothApp({ routeStep }: PhotoboothAppProps) {
           <div className="flex min-w-0 items-center gap-4 lg:gap-6">
             <button
               onClick={() => goStep('landing')}
-              className="flex shrink-0 items-center gap-1.5 text-sm font-extrabold tracking-[0.12em] uppercase transition hover:opacity-85 sm:gap-2 sm:text-lg sm:tracking-[0.14em]"
+              className="flex shrink-0 items-center gap-2 text-sm font-extrabold tracking-[0.12em] uppercase transition hover:opacity-85 sm:gap-2.5 sm:text-lg sm:tracking-[0.14em]"
             >
-              <span className="text-[#e5a93c]">✦</span>
-              <span>SNAPSTUDIO</span>
+              <img
+                src="/logo-camera-transparent.png"
+                alt="SNAPSTUDIO"
+                className="h-6 w-auto object-contain sm:h-7"
+              />
+              <span className="flex items-center">
+                <span>SNAPSTUDIO</span>
+                <span className="ml-0.5 text-[#e5a93c]">✦</span>
+              </span>
             </button>
 
             {/* Primary Navigation Links (Desktop) */}
@@ -340,7 +347,14 @@ export default function PhotoboothApp({ routeStep }: PhotoboothAppProps) {
           }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6">
-          <span>✦ SNAPSTUDIO — Virtual Photobooth & Creative Studio</span>
+          <div className="flex items-center gap-2">
+            <img
+              src="/logo-camera-transparent.png"
+              alt="SNAPSTUDIO"
+              className="h-4 w-auto object-contain opacity-85"
+            />
+            <span>SNAPSTUDIO — Virtual Photobooth & Creative Studio</span>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
             <button onClick={() => goStep('landing')} className="hover:underline">
               Home
