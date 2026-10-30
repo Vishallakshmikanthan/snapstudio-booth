@@ -16,7 +16,7 @@ export interface LayoutDef {
 
 export const LAYOUTS: LayoutDef[] = [
   { id: 'strip2', name: '2-Shot Strip', shortName: '2 Shots', hint: 'Two portraits on one vertical strip', cols: 1, rows: 2, cellW: 520, cellH: 640, slots: 2 },
-  { id: 'strip4', name: '4-Shot Strip', shortName: '4 Shots', hint: 'The classic Korean four-cut strip', cols: 1, rows: 4, cellW: 520, cellH: 420, slots: 4 },
+  { id: 'strip4', name: '4-Shot Strip', shortName: '4 Shots', hint: 'The classic four-cut strip', cols: 1, rows: 4, cellW: 520, cellH: 420, slots: 4 },
   { id: 'strip6', name: '6-Shot Strip', shortName: '6 Shots', hint: 'Extended vertical story strip', cols: 1, rows: 6, cellW: 520, cellH: 380, slots: 6 },
   { id: 'grid4', name: '2×2 Collage', shortName: '2×2 Grid', hint: 'Four-up editorial grid collage', cols: 2, rows: 2, cellW: 500, cellH: 620, slots: 4 },
   { id: 'grid6', name: '2×3 Collage', shortName: '2×3 Grid', hint: 'Six-up contact sheet collage', cols: 2, rows: 3, cellW: 480, cellH: 580, slots: 6 },
@@ -31,7 +31,7 @@ export interface FilterDef {
 
 export const FILTERS: FilterDef[] = [
   { id: 'original', name: 'Original', hint: 'Natural studio tone', css: '' },
-  { id: 'soft', name: 'Soft Booth', hint: 'Bright Korean booth skin tone', css: 'brightness(1.07) saturate(0.9) contrast(0.96)' },
+  { id: 'soft', name: 'Soft Booth', hint: 'Bright studio booth skin tone', css: 'brightness(1.07) saturate(0.9) contrast(0.96)' },
   { id: 'cine', name: 'Portra 400', hint: 'Warm amber cinema stock', css: 'contrast(1.16) saturate(1.14) sepia(0.14) brightness(0.96)' },
   { id: 'noir', name: 'Ilford B&W', hint: 'High-contrast monochrome', css: 'grayscale(1) contrast(1.22) brightness(0.98)' },
   { id: 'silver', name: 'Silver Gelatin', hint: 'Soft editorial black & white', css: 'grayscale(1) brightness(1.08) contrast(0.92)' },
@@ -362,7 +362,7 @@ export const SAMPLE_PHOTO_SETS: SamplePhotoSet[] = [
   {
     id: 'seoul-duo',
     name: 'Seoul Duo',
-    subtitle: 'Classic Korean 4-cut studio session',
+    subtitle: 'Classic 4-cut studio session',
     shots: [
       '/samples/duo-1.jpg',
       '/samples/duo-2.jpg',

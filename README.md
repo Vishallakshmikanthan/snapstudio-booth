@@ -1,6 +1,6 @@
 # SnapStudio Booth
 
-Build SNAPSTUDIO, a visually stunning, fully functional virtual photobooth web app inspired by Korean photo booths.
+Build SNAPSTUDIO, a visually stunning, fully functional virtual photobooth web app.
 
 Design: Premium, gender-neutral, modern UI with a neutral base, vibrant accents, rounded cards, smooth animations, beautiful typography, and a responsive layout. Avoid making the entire app pink or overly feminine.
 

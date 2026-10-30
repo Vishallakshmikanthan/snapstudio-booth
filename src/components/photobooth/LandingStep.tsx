@@ -176,7 +176,7 @@ export default function LandingStep({
               </h1>
 
               <p className="mt-4 max-w-md text-sm leading-relaxed text-[#a8a49c] sm:mt-6 sm:text-lg">
-                A virtual photobooth for every mood. Capture, customize, and keep your best moments — with eight signature Korean booth and analog film aesthetics.
+                A virtual photobooth for every mood. Capture, customize, and keep your best moments — with eight signature photobooth and analog film aesthetics.
               </p>
 
               {/* Primary & Secondary CTAs */}

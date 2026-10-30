@@ -1254,7 +1254,7 @@ export default function EditStep(props: Props) {
                 <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#1f1f26] p-4">
                   <div>
                     <p className="text-xs font-bold text-[#faf8f5]">Studio Barcode Stamp</p>
-                    <p className="text-[11px] text-[#9c988f]">Authentic Korean booth barcode</p>
+                    <p className="text-[11px] text-[#9c988f]">Authentic studio booth barcode</p>
                   </div>
                   <button
                     role="switch"
