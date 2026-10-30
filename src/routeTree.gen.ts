@@ -10,33 +10,84 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CaptureRouteImport } from './routes/capture'
+import { Route as EditorRouteImport } from './routes/editor'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ModesRouteImport } from './routes/modes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaptureRoute = CaptureRouteImport.update({
+  id: '/capture',
+  path: '/capture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorRoute = EditorRouteImport.update({
+  id: '/editor',
+  path: '/editor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModesRoute = ModesRouteImport.update({
+  id: '/modes',
+  path: '/modes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/capture': typeof CaptureRoute
+  '/editor': typeof EditorRoute
+  '/gallery': typeof GalleryRoute
+  '/modes': typeof ModesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/capture': typeof CaptureRoute
+  '/editor': typeof EditorRoute
+  '/gallery': typeof GalleryRoute
+  '/modes': typeof ModesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/capture': typeof CaptureRoute
+  '/editor': typeof EditorRoute
+  '/gallery': typeof GalleryRoute
+  '/modes': typeof ModesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about' | '/capture' | '/editor' | '/gallery' | '/modes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/capture' | '/editor' | '/gallery' | '/modes'
+  id:
+    '__root__' | '/' | '/about' | '/capture' | '/editor' | '/gallery' | '/modes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CaptureRoute: typeof CaptureRoute
+  EditorRoute: typeof EditorRoute
+  GalleryRoute: typeof GalleryRoute
+  ModesRoute: typeof ModesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +99,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capture': {
+      id: '/capture'
+      path: '/capture'
+      fullPath: '/capture'
+      preLoaderRoute: typeof CaptureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editor': {
+      id: '/editor'
+      path: '/editor'
+      fullPath: '/editor'
+      preLoaderRoute: typeof EditorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modes': {
+      id: '/modes'
+      path: '/modes'
+      fullPath: '/modes'
+      preLoaderRoute: typeof ModesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CaptureRoute: CaptureRoute,
+  EditorRoute: EditorRoute,
+  GalleryRoute: GalleryRoute,
+  ModesRoute: ModesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

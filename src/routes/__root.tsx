@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { PhotoboothProvider } from "../lib/photobooth/context";
 
 function NotFoundComponent() {
   return (
@@ -78,16 +79,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SNAPSTUDIO — Virtual Korean Photobooth & Creative Studio" },
+      {
+        name: "description",
+        content:
+          "A virtual Korean four-cut photobooth for every mood. Capture live shots, choose from 8 art-directed photo modes, customize with frames, filters, and doodles, and download studio-grade PNG strips.",
+      },
+      { name: "author", content: "SNAPSTUDIO" },
+      { property: "og:title", content: "SNAPSTUDIO — Virtual Photobooth" },
+      {
+        property: "og:description",
+        content: "Your Moments, Any Vibe. Capture, customize, and keep your best moments.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -120,8 +140,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <PhotoboothProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </PhotoboothProvider>
     </QueryClientProvider>
   );
 }
